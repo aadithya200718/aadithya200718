@@ -1,0 +1,273 @@
+{
+  "timestamp": "2026-10-27T01:40:42.391Z",
+  "targetUser": "aadithya200718",
+  "userProvidedFacts": {
+    "name": "Manaadithya S.",
+    "tagline": "AI/ML Engineer · Full-Stack Developer · Open-Source Builder",
+    "linkedin": "https://www.linkedin.com/in/manaadithya-s-606142271",
+    "featuredProjects": [
+      "LearnTwin",
+      "Carynth",
+      "BloodSync",
+      "Medconnect",
+      "Tamil AI Travel"
+    ],
+    "skills": [
+      "Python",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "FastAPI",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Machine Learning",
+      "Neural Networks",
+      "Agentic Workflows",
+      "LLM Orchestration"
+    ],
+    "credential": [
+      "Redis Associate Cloud Operator"
+    ]
+  },
+  "verifiedApiFacts": {
+    "user": {
+      "login": "aadithya200718",
+      "name": "manaadithya",
+      "bio": "# 👋 Hi, I'm Manaadithya S\r\n\r\n🎓 Computer Science Engineering Student\r\n🚀 Passionate about building real-world AI & Full Stack projects\r\n\r\n---\r\n\r\n## 💡 About Me",
+      "public_repos": 27,
+      "followers": 2,
+      "following": 1,
+      "created_at": "2025-01-08T03:21:23Z",
+      "updated_at": "2026-10-10T23:24:06Z",
+      "verifiedAt": "2026-10-27T01:40:41.974Z",
+      "source": "https://api.github.com/users/aadithya200718"
+    },
+    "repos": [
+      {
+        "name": "medconnect",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/medconnect",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "salon-copy",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/salon-copy",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "salon",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/salon",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "ortbi-task-manager",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/ortbi-task-manager",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "blood-sync-",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/blood-sync-",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "nitro-hr",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/nitro-hr",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "vrm",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/vrm",
+        "language": "Python",
+        "stargazers_count": 1,
+        "fork": false
+      },
+      {
+        "name": "multilingual-app",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/multilingual-app",
+        "language": "Python",
+        "stargazers_count": 1,
+        "fork": false
+      },
+      {
+        "name": "nitrostack",
+        "description": "The full-stack TypeScript framework to build, test, and deploy production-ready MCP servers and AI-native apps.",
+        "html_url": "https://github.com/aadithya200718/nitrostack",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": true
+      },
+      {
+        "name": "MUNICIPALITY-WASTE-MANAGMENT",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/MUNICIPALITY-WASTE-MANAGMENT",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "smart-hostel-issue-tracking-system",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/smart-hostel-issue-tracking-system",
+        "language": "JavaScript",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "litoff-",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/litoff-",
+        "language": "Python",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "health-ai",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/health-ai",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "banker_asssitant",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/banker_asssitant",
+        "language": "Python",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "tomato-disease-finder",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/tomato-disease-finder",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "gottago-1",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/gottago-1",
+        "language": "TypeScript",
+        "stargazers_count": 0,
+        "fork": true
+      },
+      {
+        "name": "medconne-bug",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/medconne-bug",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "amd-slingshot-",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/amd-slingshot-",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "PalindroneCheckerApp",
+        "description": "step class ",
+        "html_url": "https://github.com/aadithya200718/PalindroneCheckerApp",
+        "language": "Java",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "banker_ai",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/banker_ai",
+        "language": "Python",
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "Healthmate-AI",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/Healthmate-AI",
+        "language": "JavaScript",
+        "stargazers_count": 0,
+        "fork": true
+      },
+      {
+        "name": "he",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/he",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "ai-healthmate",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/ai-healthmate",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "tomoato-disease-finder",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/tomoato-disease-finder",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "ai-resume-analyser",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/ai-resume-analyser",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "ecommerce-backend",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/ecommerce-backend",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      },
+      {
+        "name": "litoff-project",
+        "description": null,
+        "html_url": "https://github.com/aadithya200718/litoff-project",
+        "language": null,
+        "stargazers_count": 0,
+        "fork": false
+      }
+    ]
+  },
+  "omittedClaims": [
+    "Omitted arbitrary follower milestones (only verified public GitHub follower count is recorded)",
+    "Omitted simulated commit streaks or fake heatmap statistics",
+    "Omitted unverified customer counts, revenue metrics, or proprietary funding numbers",
+    "Omitted third-party star counters on private/unreleased flagships (LearnTwin, Carynth, Tamil AI Travel are flagged as Core Flagship / Innovation Pilot)",
+    "Omitted fake \"10x Ninja\" / hyperbole labels to maintain technical and engineering credibility"
+  ],
+  "status": "VERIFIED_CLEAN"
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Profile Preview - Manaadithya S. (@aadithya200718)</title>
+  <style>
+    :root {
+      --gh-bg: #0d1117;
+      --gh-card-bg: #161b22;
+      --gh-border: #30363d;
+      --gh-text: #e6edf3;
+      --gh-text-secondary: #7d8590;
+      --gh-link: #2f81f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--gh-bg);
+      color: var(--gh-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* GitHub Top Nav Mock */
+    header {
+      background-color: #010409;
+      border-bottom: 1px solid var(--gh-border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .gh-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #f0f6fc;
+    }
+
+    .badge-preview {
+      background: #1f6feb26;
+      color: #58a6ff;
+      border: 1px solid #1f6feb;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-family: monospace;
+    }
+
+    /* GitHub Container Layout */
+    .container {
+      max-width: 1200px;
+      margin: 28px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Sidebar: GitHub User Bio */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--gh-border);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .names h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--gh-text);
+    }
+
+    .names .handle {
+      font-size: 18px;
+      color: var(--gh-text-secondary);
+      font-weight: 300;
+    }
+
+    .bio-text {
+      font-size: 13.5px;
+      color: var(--gh-text);
+      line-height: 1.4;
+    }
+
+    .meta-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--gh-text-secondary);
+    }
+
+    .meta-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-list a {
+      color: var(--gh-text);
+      text-decoration: none;
+    }
+    .meta-list a:hover {
+      color: var(--gh-link);
+      text-decoration: underline;
+    }
+
+    /* Right Column: README.md Card */
+    .readme-card {
+      border: 1px solid var(--gh-border);
+      border-radius: 6px;
+      background-color: var(--gh-card-bg);
+      overflow: hidden;
+    }
+
+    .readme-header {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--gh-border);
+      background-color: #0d1117;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-family: monospace;
+      color: var(--gh-text-secondary);
+    }
+
+    .readme-header strong {
+      color: var(--gh-text);
+    }
+
+    .readme-body {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      background: #0d1117;
+    }
+
+    /* SVG Panel Rendering */
+    .svg-panel {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+
+    .svg-panel:hover {
+      transform: translateY(-1px);
+    }
+
+    .readme-footer-links {
+      margin-top: 10px;
+      font-size: 13.5px;
+      color: var(--gh-text-secondary);
+    }
+
+    .readme-footer-links a {
+      color: var(--gh-link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .readme-footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .sub-note {
+      font-size: 11.5px;
+      color: var(--gh-text-secondary);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mock GitHub Header -->
+  <header>
+    <div class="gh-logo">
+      <svg height="24" viewBox="0 0 16 16" width="24" fill="#ffffff">
+        <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+      </svg>
+      <span>GitHub Profile Live Preview</span>
+      <span class="badge-preview">CYBER ANIMATED SVG SYSTEM</span>
+    </div>
+    <div style="font-size: 12px; color: var(--gh-text-secondary);">
+      Profile: <strong>aadithya200718/aadithya200718</strong>
+    </div>
+  </header>
+
+  <!-- GitHub Profile Layout -->
+  <div class="container">
+    <!-- User Bio Sidebar -->
+    <aside class="sidebar">
+      <div class="avatar-wrapper">
+        <img src="assets/generated/badge-portrait.png" alt="Manaadithya S." />
+      </div>
+      <div class="names">
+        <h1>Manaadithya S.</h1>
+        <div class="handle">aadithya200718</div>
+      </div>
+      <div class="bio-text">
+        AI/ML Engineer · Full-Stack Developer · Open-Source Builder
+      </div>
+      <ul class="meta-list">
+        <li>
+          <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M12.5 7.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm1.5 0a6 6 0 1 0-12 0 6 6 0 0 0 12 0ZM8 4.75a.75.75 0 0 0-.75.75v2.25H5a.75.75 0 0 0 0 1.5h2.25V11.5a.75.75 0 0 0 1.5 0V9.25H11a.75.75 0 0 0 0-1.5H8.75V5.5A.75.75 0 0 0 8 4.75Z"></path></svg>
+          Redis Associate Cloud Operator
+        </li>
+        <li>
+          <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"></path></svg>
+          Chennai, India
+        </li>
+        <li>
+          <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+          <a href="https://www.linkedin.com/in/manaadithya-s-606142271" target="_blank">LinkedIn Network</a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Right Profile README Box -->
+    <main class="readme-card">
+      <div class="readme-header">
+        <span>aadithya200718 / <strong>README.md</strong></span>
+        <span>Rendered Preview</span>
+      </div>
+
+      <div class="readme-body">
+        <!-- Panel 01: Hero -->
+        <a href="https://github.com/aadithya200718" target="_blank" style="width: 100%; display: flex; justify-content: center;">
+          <img class="svg-panel" src="assets/generated/hero.svg" alt="Manaadithya S. - Hero Overview" />
+        </a>
+
+        <!-- Panel 02: About -->
+        <img class="svg-panel" src="assets/generated/about.svg" alt="Manaadithya S. - Core Capabilities" />
+
+        <!-- Panel 03: Stack -->
+        <img class="svg-panel" src="assets/generated/stack.svg" alt="Manaadithya S. - Technical Stack" />
+
+        <!-- Panel 04: Proof -->
+        <img class="svg-panel" src="assets/generated/proof.svg" alt="Manaadithya S. - Featured Proof of Work" />
+
+        <!-- Panel 05: Connect -->
+        <a href="https://www.linkedin.com/in/manaadithya-s-606142271" target="_blank" style="width: 100%; display: flex; justify-content: center;">
+          <img class="svg-panel" src="assets/generated/connect.svg" alt="Manaadithya S. - Connect Gateway" />
+        </a>
+
+        <!-- Quick Links -->
+        <div class="readme-footer-links">
+          <a href="https://github.com/aadithya200718" target="_blank">GitHub Profile</a> &nbsp;•&nbsp;
+          <a href="https://www.linkedin.com/in/manaadithya-s-606142271" target="_blank">LinkedIn Network</a> &nbsp;•&nbsp;
+          <a href="https://github.com/aadithya200718?tab=repositories" target="_blank">Public Repositories</a>
+        </div>
+        <div class="sub-note">
+          Built with an original code-generated SVG pipeline. Self-contained, responsive, and verifiable.
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

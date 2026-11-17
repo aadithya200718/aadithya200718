@@ -1,0 +1,22 @@
+{
+  "name": "profile-svg-system",
+  "version": "1.0.0",
+  "description": "Original Cyber-Themed Animated SVG Visual System for Manaadithya S. GitHub Profile",
+  "type": "module",
+  "scripts": {
+    "verify": "tsx src/data/verifyClaims.ts",
+    "process-portraits": "tsx src/image/processPortrait.ts",
+    "build": "tsx src/generate.ts",
+    "generate": "tsx src/generate.ts",
+    "preview": "node src/previewServer.js",
+    "test": "tsx src/tests/validate.ts"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.5.0"
+  }
+}

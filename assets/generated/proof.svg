@@ -1,0 +1,494 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" width="100%" height="860" role="img" aria-label="Featured Projects - Manaadithya S.">
+  
+  <defs>
+    <!-- Deep Cinematic Background Gradient -->
+    <linearGradient id="proof-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B16" />
+      <stop offset="50%" stop-color="#090F1E" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Ambient Lighting Radial Glow -->
+    <radialGradient id="proof-ambient-glow" cx="15%" cy="15%" r="75%">
+      <stop offset="0%" stop-color="#287CFF" stop-opacity="0.14" />
+      <stop offset="40%" stop-color="#00D9F5" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#070B16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Portrait Centerpiece Halo Glow -->
+    <radialGradient id="proof-portrait-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D9F5" stop-opacity="0.30" />
+      <stop offset="55%" stop-color="#287CFF" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#070B16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Surface Gradient -->
+    <linearGradient id="proof-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C1426" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0A1020" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Card Top Accent Gradient -->
+    <linearGradient id="proof-card-accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D9F5" />
+      <stop offset="100%" stop-color="#287CFF" />
+    </linearGradient>
+
+    <!-- Soft Studio Drop Shadow -->
+    <filter id="proof-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+
+    <filter id="proof-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Rounded Portrait Clip Path for Hero Centerpiece (340x440) -->
+    <clipPath id="proof-portrait-rounded">
+      <rect x="0" y="0" width="340" height="440" rx="24" />
+    </clipPath>
+
+    <!-- Avatar Circle Clip Path for Connect (140x140) -->
+    <clipPath id="proof-avatar-circle">
+      <circle cx="70" cy="70" r="68" />
+    </clipPath>
+  </defs>
+  
+  
+  <style>
+    /* Baseline Reset */
+    text {
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Primary Heading Hierarchy */
+    .hero-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 70px;
+      fill: #F4F7FF;
+      letter-spacing: -1.5px;
+    }
+
+    .section-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: #F4F7FF;
+      letter-spacing: -0.8px;
+    }
+
+    .section-subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      fill: #A1B2CE;
+      line-height: 1.4;
+    }
+
+    .editorial-tag {
+      font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      fill: #00D9F5;
+      letter-spacing: 1.2px;
+    }
+
+    .card-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      fill: #F4F7FF;
+      letter-spacing: -0.3px;
+    }
+
+    .card-desc {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      fill: #A1B2CE;
+      line-height: 1.5;
+    }
+
+    .body-intro {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 21px;
+      fill: #A1B2CE;
+      line-height: 1.5;
+    }
+
+    .pill-label {
+      font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    .meta-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      fill: #A1B2CE;
+    }
+
+    /* Restrained Keyframe Animations */
+    @keyframes proof-ambient-pulse {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.38; transform: scale(1.02); }
+    }
+
+    @keyframes proof-halo-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes proof-beacon-pulse {
+      0% { r: 4px; opacity: 1; stroke-width: 1.5px; }
+      50% { r: 9px; opacity: 0; stroke-width: 0.5px; }
+      100% { r: 4px; opacity: 1; stroke-width: 1.5px; }
+    }
+
+    /* Animation Classes */
+    .proof-ambient-glow {
+      animation: proof-ambient-pulse 7s ease-in-out infinite;
+      transform-origin: center center;
+    }
+
+    .proof-halo-spin {
+      animation: proof-halo-rotate 36s linear infinite;
+      transform-origin: center center;
+    }
+
+    .proof-beacon-anim {
+      animation: proof-beacon-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .proof-ambient-glow,
+      .proof-halo-spin,
+      .proof-beacon-anim {
+        animation: none !important;
+        opacity: 0.3 !important;
+      }
+    }
+  </style>
+  
+
+  <!-- Studio Container -->
+  
+    <!-- Master Panel Background -->
+    <rect x="0" y="0" width="1000" height="860" rx="28" fill="url(#proof-bg-grad)" />
+
+    <!-- Ambient Subtle Radial Lighting -->
+    <rect x="0" y="0" width="1000" height="860" rx="28" fill="url(#proof-ambient-glow)" class="proof-ambient-glow" />
+
+    <!-- Clean Studio Border -->
+    <rect x="0" y="0" width="1000" height="860" rx="28" fill="none" stroke="#1C2C4E" stroke-width="1.2" />
+
+    <!-- Subtle Top Rim Light Accent -->
+    <line x1="80" y1="0.6" x2="920" y2="0.6" stroke="#287CFF" stroke-width="1.5" opacity="0.6" />
+  
+
+  <!-- Section Header -->
+  
+    <g transform="translate(64, 88)">
+      <text x="0" y="0" class="section-title">
+        Featured Projects.
+      </text>
+      <text x="0" y="32" class="section-subtitle">
+        A selection of recent platforms, agentic engines, and production systems.
+      </text>
+    </g>
+  
+
+  <!-- Flagship Cards (Top Row) -->
+  
+      <g transform="translate(64, 184)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="422" height="260" rx="22" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Top Accent Rail -->
+        <path d="M 24 0 L 398 0" stroke="#00D9F5" stroke-width="2.5" opacity="0.85" />
+
+        <!-- Project Name -->
+        <text x="32" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="28" font-weight="800" fill="#F4F7FF">
+          LearnTwin
+        </text>
+
+        <!-- Focus Tagline -->
+        <text x="32" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16" font-weight="600" fill="#00D9F5">
+          Adaptive AI-Powered Learning Twin Platform
+        </text>
+
+        <!-- Description (2 Clean Lines) -->
+        <g transform="translate(32, 114)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            Adaptive cognitive platform synthesizing learner
+          </text>
+          <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            progression with mastery algorithms.
+          </text>
+        </g>
+
+        <!-- Tech Tags Row -->
+        <g transform="translate(32, 198)">
+          
+        <rect x="0" y="0" width="86" height="28" rx="14" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="43" y="19" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="13" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Python
+        </text>
+      
+
+        <rect x="96" y="0" width="86" height="28" rx="14" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="139" y="19" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="13" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          FastAPI
+        </text>
+      
+
+        <rect x="192" y="0" width="86" height="28" rx="14" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="235" y="19" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="13" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Next.js
+        </text>
+      
+        </g>
+      </g>
+    
+  
+      <g transform="translate(514, 184)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="422" height="260" rx="22" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Top Accent Rail -->
+        <path d="M 24 0 L 398 0" stroke="#287CFF" stroke-width="2.5" opacity="0.85" />
+
+        <!-- Project Name -->
+        <text x="32" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="28" font-weight="800" fill="#F4F7FF">
+          Carynth
+        </text>
+
+        <!-- Focus Tagline -->
+        <text x="32" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16" font-weight="600" fill="#287CFF">
+          Autonomous AI Agent Execution Runtime
+        </text>
+
+        <!-- Description (2 Clean Lines) -->
+        <g transform="translate(32, 114)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            Autonomous AI agent runtime executing multi-step
+          </text>
+          <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            reasoning and automated synthesis pipelines.
+          </text>
+        </g>
+
+        <!-- Tech Tags Row -->
+        <g transform="translate(32, 198)">
+          
+        <rect x="0" y="0" width="86" height="28" rx="14" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="43" y="19" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="13" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          TypeScript
+        </text>
+      
+
+        <rect x="96" y="0" width="86" height="28" rx="14" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="139" y="19" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="13" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Node.js
+        </text>
+      
+
+        <rect x="192" y="0" width="86" height="28" rx="14" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="235" y="19" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="13" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Python
+        </text>
+      
+        </g>
+      </g>
+    
+
+  <!-- Project Cards (Bottom Row) -->
+  
+      <g transform="translate(64, 474)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="274" height="280" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Top Accent Rail -->
+        <path d="M 20 0 L 254 0" stroke="#10B981" stroke-width="2" opacity="0.8" />
+
+        <!-- Project Name -->
+        <text x="24" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="24" font-weight="800" fill="#F4F7FF">
+          BloodSync
+        </text>
+
+        <!-- Tagline -->
+        <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="13.5" font-weight="600" fill="#10B981">
+          Emergency Blood Donation Orchestration
+        </text>
+
+        <!-- Description (Clean 2-line concise purpose) -->
+        <g transform="translate(24, 102)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" fill="#A1B2CE">
+            Real-time blood supply network linking
+          </text>
+          <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" fill="#A1B2CE">
+            emergency requests, donors, &amp; hospitals.
+          </text>
+        </g>
+
+        <!-- Tech Tags -->
+        <g transform="translate(24, 186)">
+          
+        <rect x="0" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="33" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          TypeScript
+        </text>
+      
+
+        <rect x="72" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="105" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Next.js
+        </text>
+      
+
+        <rect x="144" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="177" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          PostgreSQL
+        </text>
+      
+        </g>
+
+        <!-- Verified Note or Highlight -->
+        <g transform="translate(24, 244)">
+          <circle cx="4" cy="-2" r="3" fill="#10B981" />
+          <text x="14" y="2" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#6B7C99">
+            GitHub: blood-sync-
+          </text>
+        </g>
+      </g>
+    
+  
+      <g transform="translate(363, 474)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="274" height="280" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Top Accent Rail -->
+        <path d="M 20 0 L 254 0" stroke="#287CFF" stroke-width="2" opacity="0.8" />
+
+        <!-- Project Name -->
+        <text x="24" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="24" font-weight="800" fill="#F4F7FF">
+          Medconnect
+        </text>
+
+        <!-- Tagline -->
+        <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="13.5" font-weight="600" fill="#287CFF">
+          Clinical Diagnostics &amp; Patient Portal
+        </text>
+
+        <!-- Description (Clean 2-line concise purpose) -->
+        <g transform="translate(24, 102)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" fill="#A1B2CE">
+            Integrated healthcare clinical portal
+          </text>
+          <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" fill="#A1B2CE">
+            managing diagnostic queues &amp; schedules.
+          </text>
+        </g>
+
+        <!-- Tech Tags -->
+        <g transform="translate(24, 186)">
+          
+        <rect x="0" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="33" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          TypeScript
+        </text>
+      
+
+        <rect x="72" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="105" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          React
+        </text>
+      
+
+        <rect x="144" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="177" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Node.js
+        </text>
+      
+        </g>
+
+        <!-- Verified Note or Highlight -->
+        <g transform="translate(24, 244)">
+          <circle cx="4" cy="-2" r="3" fill="#287CFF" />
+          <text x="14" y="2" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#6B7C99">
+            GitHub: medconnect
+          </text>
+        </g>
+      </g>
+    
+  
+      <g transform="translate(662, 474)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="274" height="280" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Top Accent Rail -->
+        <path d="M 20 0 L 254 0" stroke="#9566FF" stroke-width="2" opacity="0.8" />
+
+        <!-- Project Name -->
+        <text x="24" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="24" font-weight="800" fill="#F4F7FF">
+          Tamil AI Travel
+        </text>
+
+        <!-- Tagline -->
+        <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="13.5" font-weight="600" fill="#9566FF">
+          Multilingual Cultural Itinerary Engine
+        </text>
+
+        <!-- Description (Clean 2-line concise purpose) -->
+        <g transform="translate(24, 102)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" fill="#A1B2CE">
+            AI travel guide generating personalized
+          </text>
+          <text x="0" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" fill="#A1B2CE">
+            cultural itineraries in regional Tamil.
+          </text>
+        </g>
+
+        <!-- Tech Tags -->
+        <g transform="translate(24, 186)">
+          
+        <rect x="0" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="33" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          Python
+        </text>
+      
+
+        <rect x="72" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="105" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          FastAPI
+        </text>
+      
+
+        <rect x="144" y="0" width="66" height="26" rx="13" fill="#111E35" stroke="#1C2C4E" stroke-width="1" />
+        <text x="177" y="17.5" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#F4F7FF" text-anchor="middle">
+          ML
+        </text>
+      
+        </g>
+
+        <!-- Verified Note or Highlight -->
+        <g transform="translate(24, 244)">
+          <circle cx="4" cy="-2" r="3" fill="#9566FF" />
+          <text x="14" y="2" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="11.5" font-weight="600" fill="#6B7C99">
+            AI / Regional Tech
+          </text>
+        </g>
+      </g>
+    
+</svg>

@@ -1,0 +1,553 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="700" role="img" aria-label="My Tech Stack - Manaadithya S.">
+  
+  <defs>
+    <!-- Deep Cinematic Background Gradient -->
+    <linearGradient id="stack-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B16" />
+      <stop offset="50%" stop-color="#090F1E" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Ambient Lighting Radial Glow -->
+    <radialGradient id="stack-ambient-glow" cx="15%" cy="15%" r="75%">
+      <stop offset="0%" stop-color="#287CFF" stop-opacity="0.14" />
+      <stop offset="40%" stop-color="#00D9F5" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#070B16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Portrait Centerpiece Halo Glow -->
+    <radialGradient id="stack-portrait-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D9F5" stop-opacity="0.30" />
+      <stop offset="55%" stop-color="#287CFF" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#070B16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Surface Gradient -->
+    <linearGradient id="stack-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C1426" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0A1020" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Card Top Accent Gradient -->
+    <linearGradient id="stack-card-accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D9F5" />
+      <stop offset="100%" stop-color="#287CFF" />
+    </linearGradient>
+
+    <!-- Soft Studio Drop Shadow -->
+    <filter id="stack-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+
+    <filter id="stack-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Rounded Portrait Clip Path for Hero Centerpiece (340x440) -->
+    <clipPath id="stack-portrait-rounded">
+      <rect x="0" y="0" width="340" height="440" rx="24" />
+    </clipPath>
+
+    <!-- Avatar Circle Clip Path for Connect (140x140) -->
+    <clipPath id="stack-avatar-circle">
+      <circle cx="70" cy="70" r="68" />
+    </clipPath>
+  </defs>
+  
+  
+  <style>
+    /* Baseline Reset */
+    text {
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Primary Heading Hierarchy */
+    .hero-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 70px;
+      fill: #F4F7FF;
+      letter-spacing: -1.5px;
+    }
+
+    .section-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: #F4F7FF;
+      letter-spacing: -0.8px;
+    }
+
+    .section-subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      fill: #A1B2CE;
+      line-height: 1.4;
+    }
+
+    .editorial-tag {
+      font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      fill: #00D9F5;
+      letter-spacing: 1.2px;
+    }
+
+    .card-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      fill: #F4F7FF;
+      letter-spacing: -0.3px;
+    }
+
+    .card-desc {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      fill: #A1B2CE;
+      line-height: 1.5;
+    }
+
+    .body-intro {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 21px;
+      fill: #A1B2CE;
+      line-height: 1.5;
+    }
+
+    .pill-label {
+      font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    .meta-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      fill: #A1B2CE;
+    }
+
+    /* Restrained Keyframe Animations */
+    @keyframes stack-ambient-pulse {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.38; transform: scale(1.02); }
+    }
+
+    @keyframes stack-halo-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes stack-beacon-pulse {
+      0% { r: 4px; opacity: 1; stroke-width: 1.5px; }
+      50% { r: 9px; opacity: 0; stroke-width: 0.5px; }
+      100% { r: 4px; opacity: 1; stroke-width: 1.5px; }
+    }
+
+    /* Animation Classes */
+    .stack-ambient-glow {
+      animation: stack-ambient-pulse 7s ease-in-out infinite;
+      transform-origin: center center;
+    }
+
+    .stack-halo-spin {
+      animation: stack-halo-rotate 36s linear infinite;
+      transform-origin: center center;
+    }
+
+    .stack-beacon-anim {
+      animation: stack-beacon-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .stack-ambient-glow,
+      .stack-halo-spin,
+      .stack-beacon-anim {
+        animation: none !important;
+        opacity: 0.3 !important;
+      }
+    }
+  </style>
+  
+
+  <!-- Studio Container -->
+  
+    <!-- Master Panel Background -->
+    <rect x="0" y="0" width="1000" height="700" rx="28" fill="url(#stack-bg-grad)" />
+
+    <!-- Ambient Subtle Radial Lighting -->
+    <rect x="0" y="0" width="1000" height="700" rx="28" fill="url(#stack-ambient-glow)" class="stack-ambient-glow" />
+
+    <!-- Clean Studio Border -->
+    <rect x="0" y="0" width="1000" height="700" rx="28" fill="none" stroke="#1C2C4E" stroke-width="1.2" />
+
+    <!-- Subtle Top Rim Light Accent -->
+    <line x1="80" y1="0.6" x2="920" y2="0.6" stroke="#287CFF" stroke-width="1.5" opacity="0.6" />
+  
+
+  <!-- Section Header -->
+  
+    <g transform="translate(64, 88)">
+      <text x="0" y="0" class="section-title">
+        My Tech Stack.
+      </text>
+      <text x="0" y="32" class="section-subtitle">
+        Technologies and tools I use to build scalable, intelligent software.
+      </text>
+    </g>
+  
+
+  <!-- 3 Visually Balanced Columns -->
+  
+      <!-- Column Header -->
+      <g transform="translate(64, 184)">
+        <svg x="0" y="-18" width="28" height="28" viewBox="0 0 28 28">
+          <path d="M 4 8 L 12 16 L 4 24 M 14 24 L 22 24" fill="none" stroke="#00D9F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <text x="36" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="22" font-weight="700" fill="#00D9F5">
+          Languages &amp; Frontend
+        </text>
+        <line x1="0" y1="24" x2="276" y2="24" stroke="#1C2C4E" stroke-width="1.2" />
+        <line x1="0" y1="24" x2="60" y2="24" stroke="#00D9F5" stroke-width="2" />
+      </g>
+
+      <!-- Tiles -->
+      
+        <g transform="translate(64, 238)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#00D9F5" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#00D9F5" text-anchor="middle">
+            Py
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Python
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Core Language &amp; ML
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(64, 336)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#00D9F5" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#00D9F5" text-anchor="middle">
+            TS
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            TypeScript
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Type-Safe Full-Stack
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(64, 434)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#00D9F5" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#00D9F5" text-anchor="middle">
+            Re
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            React
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Frontend Architecture
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(64, 532)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#00D9F5" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#00D9F5" text-anchor="middle">
+            Nx
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Next.js
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Production Web Runtimes
+          </text>
+
+          
+        </g>
+      
+    
+  
+      <!-- Column Header -->
+      <g transform="translate(362, 184)">
+        <svg x="0" y="-18" width="28" height="28" viewBox="0 0 28 28">
+          <rect x="3" y="5" width="22" height="8" rx="2" fill="none" stroke="#287CFF" stroke-width="1.8" /><rect x="3" y="16" width="22" height="8" rx="2" fill="none" stroke="#287CFF" stroke-width="1.8" /><circle cx="7" cy="9" r="1.5" fill="#287CFF" /><circle cx="7" cy="20" r="1.5" fill="#287CFF" />
+        </svg>
+        <text x="36" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="22" font-weight="700" fill="#287CFF">
+          Backend &amp; Infrastructure
+        </text>
+        <line x1="0" y1="24" x2="276" y2="24" stroke="#1C2C4E" stroke-width="1.2" />
+        <line x1="0" y1="24" x2="60" y2="24" stroke="#287CFF" stroke-width="2" />
+      </g>
+
+      <!-- Tiles -->
+      
+        <g transform="translate(362, 238)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#287CFF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#287CFF" text-anchor="middle">
+            FA
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            FastAPI
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Async API Services
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(362, 336)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#287CFF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#287CFF" text-anchor="middle">
+            JS
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Node.js
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Event-Driven Services
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(362, 434)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#287CFF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#287CFF" text-anchor="middle">
+            PG
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            PostgreSQL
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Relational Persistence
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(362, 532)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#287CFF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#287CFF" text-anchor="middle">
+            Rd
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Redis
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            In-Memory Cache
+          </text>
+
+          
+          <!-- Cloud Certified Tag for Redis -->
+          <g transform="translate(188, 16)">
+            <rect x="0" y="0" width="72" height="22" rx="11" fill="#10B98118" stroke="#10B981" stroke-width="1" />
+            <text x="36" y="15" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="10.5" font-weight="700" fill="#10B981" text-anchor="middle">
+              Certified
+            </text>
+          </g>
+        </g>
+      
+    
+  
+      <!-- Column Header -->
+      <g transform="translate(660, 184)">
+        <svg x="0" y="-18" width="28" height="28" viewBox="0 0 28 28">
+          <circle cx="14" cy="14" r="10" fill="none" stroke="#9566FF" stroke-width="1.8" /><circle cx="14" cy="14" r="3.5" fill="#9566FF" /><line x1="14" y1="4" x2="14" y2="7" stroke="#9566FF" stroke-width="2" /><line x1="14" y1="21" x2="14" y2="24" stroke="#9566FF" stroke-width="2" /><line x1="4" y1="14" x2="7" y2="14" stroke="#9566FF" stroke-width="2" /><line x1="21" y1="14" x2="24" y2="14" stroke="#9566FF" stroke-width="2" />
+        </svg>
+        <text x="36" y="4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="22" font-weight="700" fill="#9566FF">
+          AI &amp; Machine Learning
+        </text>
+        <line x1="0" y1="24" x2="276" y2="24" stroke="#1C2C4E" stroke-width="1.2" />
+        <line x1="0" y1="24" x2="60" y2="24" stroke="#9566FF" stroke-width="2" />
+      </g>
+
+      <!-- Tiles -->
+      
+        <g transform="translate(660, 238)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#9566FF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#9566FF" text-anchor="middle">
+            ML
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Machine Learning
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Models &amp; Inference
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(660, 336)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#9566FF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#9566FF" text-anchor="middle">
+            NN
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Neural Networks
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Architectures &amp; Weights
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(660, 434)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#9566FF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#9566FF" text-anchor="middle">
+            Ag
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            Agentic Workflows
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Tool Calling &amp; Memory
+          </text>
+
+          
+        </g>
+      
+
+        <g transform="translate(660, 532)">
+          <!-- Tile Card -->
+          <rect x="0" y="0" width="276" height="84" rx="16" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+          <!-- Left Tech Glyph Badge -->
+          <rect x="18" y="18" width="48" height="48" rx="12" fill="#111E35" stroke="#9566FF" stroke-width="1.2" opacity="0.9" />
+          <text x="42" y="49" font-family="'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace" font-size="16" font-weight="800" fill="#9566FF" text-anchor="middle">
+            AI
+          </text>
+
+          <!-- Tech Name -->
+          <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="20" font-weight="700" fill="#F4F7FF">
+            LLM Orchestration
+          </text>
+
+          <!-- Subtitle / Role -->
+          <text x="78" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="14.5" font-weight="400" fill="#A1B2CE">
+            Reasoning Runtimes
+          </text>
+
+          
+        </g>
+      
+    
+</svg>

@@ -1,0 +1,352 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="100%" height="660" role="img" aria-label="What I Build - Manaadithya S.">
+  
+  <defs>
+    <!-- Deep Cinematic Background Gradient -->
+    <linearGradient id="about-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B16" />
+      <stop offset="50%" stop-color="#090F1E" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Ambient Lighting Radial Glow -->
+    <radialGradient id="about-ambient-glow" cx="15%" cy="15%" r="75%">
+      <stop offset="0%" stop-color="#287CFF" stop-opacity="0.14" />
+      <stop offset="40%" stop-color="#00D9F5" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#070B16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Portrait Centerpiece Halo Glow -->
+    <radialGradient id="about-portrait-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D9F5" stop-opacity="0.30" />
+      <stop offset="55%" stop-color="#287CFF" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#070B16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Surface Gradient -->
+    <linearGradient id="about-card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0C1426" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0A1020" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Card Top Accent Gradient -->
+    <linearGradient id="about-card-accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D9F5" />
+      <stop offset="100%" stop-color="#287CFF" />
+    </linearGradient>
+
+    <!-- Soft Studio Drop Shadow -->
+    <filter id="about-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+
+    <filter id="about-glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Rounded Portrait Clip Path for Hero Centerpiece (340x440) -->
+    <clipPath id="about-portrait-rounded">
+      <rect x="0" y="0" width="340" height="440" rx="24" />
+    </clipPath>
+
+    <!-- Avatar Circle Clip Path for Connect (140x140) -->
+    <clipPath id="about-avatar-circle">
+      <circle cx="70" cy="70" r="68" />
+    </clipPath>
+  </defs>
+  
+  
+  <style>
+    /* Baseline Reset */
+    text {
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Primary Heading Hierarchy */
+    .hero-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 70px;
+      fill: #F4F7FF;
+      letter-spacing: -1.5px;
+    }
+
+    .section-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: #F4F7FF;
+      letter-spacing: -0.8px;
+    }
+
+    .section-subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      fill: #A1B2CE;
+      line-height: 1.4;
+    }
+
+    .editorial-tag {
+      font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 16px;
+      fill: #00D9F5;
+      letter-spacing: 1.2px;
+    }
+
+    .card-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      fill: #F4F7FF;
+      letter-spacing: -0.3px;
+    }
+
+    .card-desc {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      fill: #A1B2CE;
+      line-height: 1.5;
+    }
+
+    .body-intro {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 21px;
+      fill: #A1B2CE;
+      line-height: 1.5;
+    }
+
+    .pill-label {
+      font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    .meta-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      fill: #A1B2CE;
+    }
+
+    /* Restrained Keyframe Animations */
+    @keyframes about-ambient-pulse {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.38; transform: scale(1.02); }
+    }
+
+    @keyframes about-halo-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes about-beacon-pulse {
+      0% { r: 4px; opacity: 1; stroke-width: 1.5px; }
+      50% { r: 9px; opacity: 0; stroke-width: 0.5px; }
+      100% { r: 4px; opacity: 1; stroke-width: 1.5px; }
+    }
+
+    /* Animation Classes */
+    .about-ambient-glow {
+      animation: about-ambient-pulse 7s ease-in-out infinite;
+      transform-origin: center center;
+    }
+
+    .about-halo-spin {
+      animation: about-halo-rotate 36s linear infinite;
+      transform-origin: center center;
+    }
+
+    .about-beacon-anim {
+      animation: about-beacon-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Motion Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      .about-ambient-glow,
+      .about-halo-spin,
+      .about-beacon-anim {
+        animation: none !important;
+        opacity: 0.3 !important;
+      }
+    }
+  </style>
+  
+
+  <!-- Studio Container -->
+  
+    <!-- Master Panel Background -->
+    <rect x="0" y="0" width="1000" height="660" rx="28" fill="url(#about-bg-grad)" />
+
+    <!-- Ambient Subtle Radial Lighting -->
+    <rect x="0" y="0" width="1000" height="660" rx="28" fill="url(#about-ambient-glow)" class="about-ambient-glow" />
+
+    <!-- Clean Studio Border -->
+    <rect x="0" y="0" width="1000" height="660" rx="28" fill="none" stroke="#1C2C4E" stroke-width="1.2" />
+
+    <!-- Subtle Top Rim Light Accent -->
+    <line x1="80" y1="0.6" x2="920" y2="0.6" stroke="#287CFF" stroke-width="1.5" opacity="0.6" />
+  
+
+  <!-- Section Header -->
+  
+    <g transform="translate(64, 88)">
+      <text x="0" y="0" class="section-title">
+        What I Build.
+      </text>
+      <text x="0" y="32" class="section-subtitle">
+        Specialized in autonomous systems, distributed platforms, and high-performance applications.
+      </text>
+    </g>
+  
+
+  <!-- 2x2 Spacious Capability Cards -->
+  
+      <g transform="translate(64, 188)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="422" height="200" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Subtle Top Accent Glow -->
+        <path d="M 24 0 L 398 0" stroke="#00D9F5" stroke-width="2" opacity="0.8" />
+
+        <!-- Icon Container -->
+        <g transform="translate(32, 28)">
+          
+        <circle cx="20" cy="20" r="16" fill="#00D9F514" stroke="#00D9F5" stroke-width="1.5" />
+        <circle cx="20" cy="20" r="4" fill="#00D9F5" />
+        <line x1="20" y1="8" x2="20" y2="13" stroke="#00D9F5" stroke-width="1.5" stroke-linecap="round" />
+        <line x1="20" y1="27" x2="20" y2="32" stroke="#00D9F5" stroke-width="1.5" stroke-linecap="round" />
+        <line x1="8" y1="20" x2="13" y2="20" stroke="#00D9F5" stroke-width="1.5" stroke-linecap="round" />
+        <line x1="27" y1="20" x2="32" y2="20" stroke="#00D9F5" stroke-width="1.5" stroke-linecap="round" />
+      
+        </g>
+
+        <!-- Card Title -->
+        <text x="32" y="96" class="card-title">
+          AI &amp; Machine Learning
+        </text>
+
+        <!-- Concise Description (2 Clean Lines) -->
+        <g transform="translate(32, 128)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            Architecting autonomous agent workflows,
+          </text>
+          <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            neural pipelines, and low-latency inference.
+          </text>
+        </g>
+      </g>
+    
+  
+      <g transform="translate(514, 188)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="422" height="200" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Subtle Top Accent Glow -->
+        <path d="M 24 0 L 398 0" stroke="#287CFF" stroke-width="2" opacity="0.8" />
+
+        <!-- Icon Container -->
+        <g transform="translate(32, 28)">
+          
+        <rect x="6" y="8" width="28" height="20" rx="4" fill="#287CFF14" stroke="#287CFF" stroke-width="1.5" />
+        <line x1="6" y1="15" x2="34" y2="15" stroke="#287CFF" stroke-width="1.2" />
+        <line x1="16" y1="32" x2="24" y2="32" stroke="#287CFF" stroke-width="1.5" stroke-linecap="round" />
+        <line x1="20" y1="28" x2="20" y2="32" stroke="#287CFF" stroke-width="1.5" />
+      
+        </g>
+
+        <!-- Card Title -->
+        <text x="32" y="96" class="card-title">
+          Full-Stack Development
+        </text>
+
+        <!-- Concise Description (2 Clean Lines) -->
+        <g transform="translate(32, 128)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            Constructing responsive, type-safe web platforms
+          </text>
+          <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            with modern reactive architectures.
+          </text>
+        </g>
+      </g>
+    
+  
+      <g transform="translate(64, 412)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="422" height="200" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Subtle Top Accent Glow -->
+        <path d="M 24 0 L 398 0" stroke="#9566FF" stroke-width="2" opacity="0.8" />
+
+        <!-- Icon Container -->
+        <g transform="translate(32, 28)">
+          
+        <rect x="6" y="6" width="28" height="11" rx="3" fill="#9566FF14" stroke="#9566FF" stroke-width="1.5" />
+        <rect x="6" y="21" width="28" height="11" rx="3" fill="#9566FF14" stroke="#9566FF" stroke-width="1.5" />
+        <circle cx="12" cy="11.5" r="2" fill="#9566FF" />
+        <circle cx="12" cy="26.5" r="2" fill="#9566FF" />
+      
+        </g>
+
+        <!-- Card Title -->
+        <text x="32" y="96" class="card-title">
+          Backend &amp; APIs
+        </text>
+
+        <!-- Concise Description (2 Clean Lines) -->
+        <g transform="translate(32, 128)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            Engineering distributed microservices,
+          </text>
+          <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            low-latency caching, and robust APIs.
+          </text>
+        </g>
+      </g>
+    
+  
+      <g transform="translate(514, 412)">
+        <!-- Card Container Surface -->
+        <rect x="0" y="0" width="422" height="200" rx="20" fill="#0C1426" stroke="#1C2C4E" stroke-width="1.2" />
+
+        <!-- Subtle Top Accent Glow -->
+        <path d="M 24 0 L 398 0" stroke="#10B981" stroke-width="2" opacity="0.8" />
+
+        <!-- Icon Container -->
+        <g transform="translate(32, 28)">
+          
+        <circle cx="14" cy="13" r="4" fill="#10B98114" stroke="#10B981" stroke-width="1.5" />
+        <circle cx="26" cy="13" r="4" fill="#10B98114" stroke="#10B981" stroke-width="1.5" />
+        <circle cx="20" cy="27" r="4" fill="#10B98114" stroke="#10B981" stroke-width="1.5" />
+        <line x1="14" y1="17" x2="18" y2="23" stroke="#10B981" stroke-width="1.5" />
+        <line x1="26" y1="17" x2="22" y2="23" stroke="#10B981" stroke-width="1.5" />
+      
+        </g>
+
+        <!-- Card Title -->
+        <text x="32" y="96" class="card-title">
+          Open-Source Engineering
+        </text>
+
+        <!-- Concise Description (2 Clean Lines) -->
+        <g transform="translate(32, 128)">
+          <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            Building clean, reusable developer tooling,
+          </text>
+          <text x="0" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', system-ui, sans-serif" font-size="16.5" fill="#A1B2CE">
+            open frameworks, and community software.
+          </text>
+        </g>
+      </g>
+    
+</svg>

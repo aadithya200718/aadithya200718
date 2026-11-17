@@ -1,0 +1,23 @@
+{
+  "name": "manaadithya-github-profile",
+  "version": "1.0.0",
+  "description": "Manaadithya S. GitHub Profile Visual System",
+  "type": "module",
+  "scripts": {
+    "verify": "tsx profile-svg-system/src/data/verifyClaims.ts",
+    "process-portraits": "tsx profile-svg-system/src/image/processPortrait.ts",
+    "build": "tsx profile-svg-system/src/generate.ts",
+    "generate": "tsx profile-svg-system/src/generate.ts",
+    "preview": "node profile-svg-system/src/previewServer.js",
+    "test": "tsx profile-svg-system/src/tests/validate.ts",
+    "render-previews": "tsx profile-svg-system/src/image/renderPreviews.ts"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.2"
+  }
+}
